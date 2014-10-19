@@ -27,10 +27,10 @@ grunt.initConfig({
   derby_views: {
     default: {
       options: {
-        // Task-specific options go here.
+        // Options go here.
       },
       files: {
-        // Target-specific file lists and/or options go here.
+        // src and dest-files go here
       }
     }
   }
@@ -100,7 +100,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['derby_views', 'watch']);
 
-};```
+};
+```
 
 
 ## Contributing
