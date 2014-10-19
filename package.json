@@ -9,8 +9,17 @@
     "url": ""
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "derby",
+    "views"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zag2art/grunt-derby-views.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zag2art/grunt-derby-views/issues"
+  },
   "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
@@ -29,6 +38,6 @@
   },
   "dependencies": {
     "async": "^0.9.0",
-    "derby-views": "~0.0.2"
+    "derby-views": "~0.1.0"
   }
 }
