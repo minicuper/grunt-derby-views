@@ -31,16 +31,7 @@ module.exports = function (grunt) {
     // Iterate over all specified file groups.
     async.forEachSeries(this.files, function (file, cb) {
 
-      var src = file.src.filter(function (filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
-        if (!grunt.file.exists(filepath)) {
-          grunt.log.warn('Source file "' + filepath + '" not found.');
-          return false;
-        } else {
-          return true;
-        }
-      });
-
+      var src = file.orig.src;
 
       derbyViews(src, options, function(err, res){
         if (err) {
