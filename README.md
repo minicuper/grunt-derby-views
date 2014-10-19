@@ -25,13 +25,15 @@ In your project's Gruntfile, add a section named `derby_views` to the data objec
 ```js
 grunt.initConfig({
   derby_views: {
-    options: {
-      // Task-specific options go here.
-    },
-    files: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
+    default: {
+      options: {
+        // Task-specific options go here.
+      },
+      files: {
+        // Target-specific file lists and/or options go here.
+      }
+    }
+  }
 })
 ```
 
@@ -62,18 +64,43 @@ Hash of compilers. For example: `{'.jade': require('derby-jade')}`
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In this example, the default options are used to serialize derby-templates. 
+Additional `watch`-task is used to live-reload.  
 
 ```js
-grunt.initConfig({
-  derby_views: {
-    options: {},
-    files: {
-      'views.js': ['views/index.html']
+module.exports = function (grunt) {
+
+  // load all npm grunt tasks
+  require('load-grunt-tasks')(grunt);
+
+  grunt.initConfig({
+    derby_views: {
+      default: {
+        options:{
+          cwd: 'example'
+        },
+        files: {
+          'views.js': ['views/templates.html']
+        }
+      }
     },
-  },
-})
-```
+    watch: {
+      css: {
+        files: 'example/views/templates.html',
+        tasks: ['derby_views'],
+        options: {
+          livereload: true
+        }
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-derby-views');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('default', ['derby_views', 'watch']);
+
+};```
 
 
 ## Contributing
