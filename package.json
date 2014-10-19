@@ -1,6 +1,6 @@
 {
   "name": "grunt-derby-views",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Derby-standalone templates serializer",
   "repository": "",
   "author": {
