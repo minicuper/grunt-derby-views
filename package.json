@@ -1,8 +1,11 @@
 {
   "name": "grunt-derby-views",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Derby-standalone templates serializer",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zag2art/grunt-derby-views.git"
+  },
   "author": {
     "name": "Artur Zayats",
     "email": "zag2art@gmail.com",
@@ -13,10 +16,6 @@
     "derby",
     "views"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/zag2art/grunt-derby-views.git"
-  },
   "bugs": {
     "url": "https://github.com/zag2art/grunt-derby-views/issues"
   },
