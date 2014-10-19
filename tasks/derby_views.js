@@ -10,7 +10,8 @@
 
 module.exports = function (grunt) {
   var derbyViews = require('derby-views');
-  var async =require('async');
+  var async = require('async');
+  var path = require('path');
 
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
