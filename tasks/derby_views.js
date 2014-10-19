@@ -49,9 +49,9 @@ module.exports = function (grunt) {
 
         if (file.dest.charAt(0) !== '/') {
           if (options.cwd.charAt(0) !== '/') {
-            file.dest = path.join(process.cwd(), options.cwd, filename);
+            file.dest = path.join(process.cwd(), options.cwd, file.dest);
           } else {
-            file.dest = path.join(options.cwd, filename);
+            file.dest = path.join(options.cwd, file.dest);
           }
         }
 
