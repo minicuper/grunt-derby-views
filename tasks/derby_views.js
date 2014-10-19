@@ -46,6 +46,14 @@ module.exports = function (grunt) {
           return cb(err);
         }
 
+        if (file.dest.charAt(0) !== '/') {
+          if (options.cwd.charAt(0) !== '/') {
+            file.dest = path.join(process.cwd(), options.cwd, filename);
+          } else {
+            file.dest = path.join(options.cwd, filename);
+          }
+        }
+
         grunt.file.write(file.dest, res);
         grunt.log.writeln('File "' + file.dest+'" was created');
         cb();
